@@ -18,17 +18,9 @@ private func startButton(isOn: Bool) {
     }
 var modes: [Mode] = Mode.allCases
     
-private func selectMode(isOnModeButton: Mode) {
-    switch isOnModeButton {
-    case .normal :
-        print("通常モード")
-    case .humidification:
-        print("加湿モード")
-    case .blowingAir:
-        print("送風モード")
-    case .circulation:
-        print("循環モード")
-    }
+private func selectMode(mode: Mode) {
+    let string = mode.rawValue
+    print(string)
 }
 
     // ③風量調整できる
@@ -40,17 +32,11 @@ private func selectMode(isOnModeButton: Mode) {
 var airFlows: [AirFlow] = AirFlow.allCases
     
     private func strengthButton(isOnStrengthButton: AirFlow) {
-        switch isOnStrengthButton {
-        case .delicate :
-            print("弱")
-        case .medium :
-            print("中")
-        case .powerful :
-            print("強")
-        }
+        let stregth = isOnStrengthButton.rawValue
+        print(stregth)
     }
 startButton(isOn: true)
-selectMode(isOnModeButton: .blowingAir)
+selectMode(mode: .blowingAir)
 strengthButton(isOnStrengthButton: .powerful)
 
 
