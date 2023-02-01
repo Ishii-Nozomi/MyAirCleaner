@@ -1,9 +1,8 @@
 import UIKit
     
 // ①運転する.停止ボタン
-private func startButton(pushStartButton: Bool) -> Void {
-    if pushStartButton == true {
-        modes.append(.normal)
+private func startButton(isOn: Bool) {
+    if isOn {
         print("通常モードスタート")
     } else {
         print("停止中")
@@ -17,10 +16,10 @@ private func startButton(pushStartButton: Bool) -> Void {
     case blowingAir = "送風モード"
     case circulation = "循環モード"
     }
-    var modes: [Mode] = [.normal, .humidification, .blowingAir, .circulation]
+var modes: [Mode] = Mode.allCases
     
-private func selectMode(pushModeButton: Mode) {
-    switch pushModeButton {
+private func selectMode(isOnModeButton: Mode) {
+    switch isOnModeButton {
     case .normal :
         print("通常モード")
     case .humidification:
@@ -38,10 +37,10 @@ private func selectMode(pushModeButton: Mode) {
         case medium = "中"
         case powerful = "強"
     }
-    var airFlows: [AirFlow] = [.delicate, .medium, .powerful]
+var airFlows: [AirFlow] = AirFlow.allCases
     
-    private func strengthButton(pushStrengthButton: AirFlow) {
-        switch pushStrengthButton {
+    private func strengthButton(isOnStrengthButton: AirFlow) {
+        switch isOnStrengthButton {
         case .delicate :
             print("弱")
         case .medium :
@@ -50,9 +49,9 @@ private func selectMode(pushModeButton: Mode) {
             print("強")
         }
     }
-startButton(pushStartButton: true)
-selectMode(pushModeButton: .blowingAir)
-strengthButton(pushStrengthButton: .powerful)
+startButton(isOn: true)
+selectMode(isOnModeButton: .blowingAir)
+strengthButton(isOnStrengthButton: .powerful)
 
 
 
