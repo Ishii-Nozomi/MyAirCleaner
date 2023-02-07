@@ -39,5 +39,18 @@ startButton(isOn: true)
 selectMode(mode: .blowingAir)
 strengthButton(isOnStrengthButton: .powerful)
 
+// 例外ケース
+// フィルターの汚れ
+var filter = true
 
+if filter {
+    print("フィルターが汚れています")
+}
+
+// 給水タンクの給水アラート
+var tankLiter = 2
+
+if tankLiter <= 1{
+    print("タンクの水を給水してください")
+}
 
